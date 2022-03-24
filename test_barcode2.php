@@ -11,12 +11,12 @@ for ($x = 0; $x <= 1; $x++) {
     $pdf->Write(5,'A set: "'.$code.' "    " B Set: "'.$code.'"'." ");
     $pdf->Write(5,'A set: "'.$code.' "    " B Set: "'.$code.'"');
   }
-//A set
-// $code='123456789012';
-// $pdf->Code128(5,3,$code,90,15);//ตำแหน่ง 1 = ห่างจากซ้าย , ตำแหน่ง 2 = ห่างจากบน , ตำแหน่ง 3 = ความกว้าง barcode , ตำแหน่ง 4 = ขนาด Font 
-// $pdf->SetXY(5,20,150,15);//ความห่างของตัวอักษร
-// $pdf->Write(5,'A set: "'.$code.' "    " B Set:xx "'.$code.'"');
-// $pdf->Write(5,'A set: "'.$code.' "    " B Set: "'.$code.'"');
+A set
+$code='123456789012';
+$pdf->Code128(5,3,$code,90,15);//ตำแหน่ง 1 = ห่างจากซ้าย , ตำแหน่ง 2 = ห่างจากบน , ตำแหน่ง 3 = ความกว้าง barcode , ตำแหน่ง 4 = ขนาด Font 
+$pdf->SetXY(5,20,150,15);//ความห่างของตัวอักษร
+$pdf->Write(5,'A set: "'.$code.' "    " B Set:xx "'.$code.'"');
+$pdf->Write(5,'A set: "'.$code.' "    " B Set: "'.$code.'"');
 
 
 

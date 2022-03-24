@@ -1,18 +1,34 @@
 <?php
 require('code128.php');
 
-$pdf=new PDF_Code128('L','mm',array(100,100  ));
+$pdf=new PDF_Code128('P','mm',array(100,100 ));
 $pdf->AddPage();
 $pdf->SetFont('Arial','',10);
-for ($x = 0; $x <= 1; $x++) {
-    $code='123456789012';
-    $pdf->Code128(5,3,$code,90,15);//ตำแหน่ง 1 = ห่างจากซ้าย , ตำแหน่ง 2 = ห่างจากบน , ตำแหน่ง 3 = ความกว้าง barcode , ตำแหน่ง 4 = ขนาด Font 
-    $pdf->SetXY(5,20,150,15);//ความห่างของตัวอักษร
-    $pdf->Write(5,'A set: "'.$code.' "    " B Set: "'.$code.'"'." ");
-    $pdf->Write(5,'A set: "'.$code.' "    " B Set: "'.$code.'"');
-  }
+// for ($x = 0; $x <= 10; $x++) {
+//     $code='123456789012';
+//     $pdf->Code128(5,3,$code,90,15);//ตำแหน่ง 1 = ห่างจากซ้าย , ตำแหน่ง 2 = ห่างจากบน , ตำแหน่ง 3 = ความกว้าง barcode , ตำแหน่ง 4 = ขนาด Font 
+//     $pdf->SetXY(5,20,150,15);//ความห่างของตัวอักษร
+//     $pdf->Write(5,'A set: "'.$code.' "    " B Set: "'.$code.'"'." ");
+//     $pdf->Write(5,'A set: "'.$code.' "    " B Set: "'.$code.'"');
+//     $pdf->Ln();}
+  
 
+    for($i=1;$i<=10;$i++){
+        $code='123456789012';
+        $pdf->Code128(5,3,$code,90,15);//ตำแหน่ง 1 = ห่างจากซ้าย , ตำแหน่ง 2 = ห่างจากบน , ตำแหน่ง 3 = ความกว้าง barcode , ตำแหน่ง 4 = ขนาด Font 
+        $pdf->SetXY(5,20,150,15);//ความห่างของตัวอักษร
+        $pdf->Write(5,'A set: "'.$code.' "    " B Set: "'.$code.'"'." ");
+        //echo "<p class='inline'><span ><b>Item: fff</b></span>'".Code128(5,3,$code,90,15)."'<span ><b>Price: ".$rate." </b><span></p>&nbsp&nbsp&nbsp&nbsp";
+        $pdf->AddPage();
+        $pdf->Ln();
+    }
+    
+    $pdf->Output();
 
+  
+//   for ($x = 0; $x <= 10; $x++) {
+//     $pdf->Write('The number is:"'.$code.'");
+ 
 
 
 

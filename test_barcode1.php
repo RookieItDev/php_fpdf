@@ -1,5 +1,5 @@
 <?php
-require('pdf_barcode.php');
+require('/fpdf.php');
 $pdf = new PDF_BARCODE('L','mm',array(100,100  ));//กำหนด W : H 100*100 ไม่สามารถปรับสูงกับกว้างได้
 $pdf->AddPage();
 
